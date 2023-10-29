@@ -7,20 +7,32 @@ def update_text(x):
     text += str(x)
     text_box.delete(1.0, "end")
     text_box.insert(1.0, text)
+
 def eval_numbers():
     global text
     try:
         text = str(eval(text))
         text_box.delete(1.0, "end")
         text_box.insert(1.0, text)
+        return text
     except:
         clear_text_box()
         text_box.insert(1.0, "Error")
+        return None
 
 def clear_text_box():
     global text
     text = ""
     text_box.delete(1.0, "end")
+
+def save_result():
+    result = eval_numbers()
+    if result is not None:
+        with open("result.txt", "a") as file:
+            file.write("\nResult of the calculation:\n")
+            file.write(result)
+            text_box.delete(1.0, "end")
+            text_box.insert(1.0, "Result saved!")
 
 window = Tk()
 window.title("Számológép")
@@ -46,6 +58,6 @@ Division = create_button(window, "/", 190, 180, 50, 50, command=lambda: update_t
 Multiplication = create_button(window, "*", 190, 240, 50, 50, command=lambda: update_text("*"))
 Equal = create_button(window, "=", 190, 300, 50, 50,bg="deepskyblue",command=eval_numbers)
 C = create_button(window, "C", 130, 300, 50, 50,command=clear_text_box)
-Save = create_button(window, "Eredmény mentése", 10, 300, 50, 110, font=("Helvetica", 8))
+Save = create_button(window, "Eredmény mentése", 10, 300, 50, 110, font=("Helvetica", 8), command=save_result)
 
 window.mainloop()
