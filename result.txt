@@ -6,3 +6,17 @@ Result of the calculation:
 4
 Result of the calculation:
 96
+Result of the calculation:
+10
+Result of the calculation:
+32
+Result of the calculation:
+19
+Result of the calculation:
+18.0
+Result of the calculation:
+invalid syntax (<string>, line 0)
+Result of the calculation:
+invalid syntax (<string>, line 0)
+Result of the calculation:
+7

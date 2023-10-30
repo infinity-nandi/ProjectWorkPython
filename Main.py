@@ -1,5 +1,6 @@
 from tkinter import *
 from CreateButton import create_button
+import math
 
 text = ""
 def update_text(x):
@@ -33,12 +34,35 @@ def save_result():
             file.write(result)
             text_box.delete(1.0, "end")
             text_box.insert(1.0, "Result saved!")
+def square_root():
+    global text
+    try:
+        root = math.sqrt(float(text))
+        text_box.delete(1.0, "end")
+        text_box.insert(1.0, root)
+        return str(root)
+    except:
+        clear_text_box()
+        text_box.insert(1.0, "Error")
+        return None
+
+def square():
+    global text
+    try:
+        squared = math.pow(float(text), 2)
+        text_box.delete(1.0, "end")
+        text_box.insert(1.0, squared)
+        return str(squared)
+    except:
+        clear_text_box()
+        text_box.insert(1.0, "Error")
+        return None
 
 window = Tk()
 window.title("Számológép")
-window.geometry("250x380")
+window.geometry("310x380")
 text_box = Text(window, font=("Helvetica", 24))
-text_box.place(x=10, y=10, height=40, width=230)
+text_box.place(x=10, y=10, height=40, width=290)
 
 Seven = create_button(window, "7", 10, 60, 50, 50, command=lambda: update_text(7))
 Eight = create_button(window, "8", 70, 60, 50, 50, command=lambda: update_text(8))
@@ -56,7 +80,9 @@ Add = create_button(window, "+", 190, 60, 50, 50, command=lambda: update_text("+
 Minus = create_button(window, "-", 190, 120, 50, 50, command=lambda: update_text("-"))
 Division = create_button(window, "/", 190, 180, 50, 50, command=lambda: update_text("/"))
 Multiplication = create_button(window, "*", 190, 240, 50, 50, command=lambda: update_text("*"))
-Equal = create_button(window, "=", 190, 300, 50, 50,bg="deepskyblue",command=eval_numbers)
+SquareRoot = create_button(window, "√", 250, 60, 110, 50, command=square_root)
+Square = create_button(window, "²", 250, 180, 110, 50, command=square)
+Equal = create_button(window, "=", 190, 300, 50, 110,bg="deepskyblue",command=eval_numbers)
 C = create_button(window, "C", 130, 300, 50, 50,command=clear_text_box)
 Save = create_button(window, "Eredmény mentése", 10, 300, 50, 110, font=("Helvetica", 8), command=save_result)
 
