@@ -20,3 +20,25 @@ Result of the calculation:
 invalid syntax (<string>, line 0)
 Result of the calculation:
 7
+Result of the calculation:
+21
+Result of the calculation:
+2
+Calculation: 14
+Result: 14
+
+Numbers entered: 14
+Result: 14
+
+Calculation and Result:
+14Result: 14
+
+Calculation and Result:
+7+7=14Result: 14
+
+Result of the calculation:
+14
+Result of the calculation:
+7+7=14
+Result of the calculation:
+5+(2*3)=11

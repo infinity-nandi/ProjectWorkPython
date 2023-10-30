@@ -15,8 +15,8 @@ def eval_numbers():
     global text
     try:
         text = str(eval(text)) #text változó értékének kiértékelése az eval() függvény segítségével.
-        text_box.delete(1.0, "end")
-        text_box.insert(1.0, text)
+        #text_box.delete(1.0, "end")
+        text_box.insert(2.0, "=" + text)
         return text
     except:
         clear_text_box()
@@ -29,13 +29,14 @@ def clear_text_box():
     text_box.delete(1.0, "end")
 
 def save_result():
-    result = eval_numbers()
-    if result is not None:
+    calculation = text_box.get(1.0, "end-1c")  #A text_box tartalmának megszerzése
+    if calculation is not None:
         with open("result.txt", "a") as file:
             file.write("\nResult of the calculation:\n")
-            file.write(result)
+            file.write(calculation)
             text_box.delete(1.0, "end")
             text_box.insert(1.0, "Result saved!")
+
 def square_root():
     global text
     try:
@@ -50,15 +51,10 @@ def square_root():
 
 def square():
     global text
-    try:
-        squared = math.pow(float(text), 2)
-        text_box.delete(1.0, "end")
-        text_box.insert(1.0, squared)
-        return str(squared)
-    except:
-        clear_text_box()
-        text_box.insert(1.0, "Error")
-        return None
+    squared = math.pow(float(text), 2)
+    text_box.delete(1.0, "end")
+    text_box.insert(1.0, squared)
+    return str(squared)
 
 window = Tk() #Új thinkter ablak létrehozása és window változóhoz rendelése
 window.title("Számológép")
