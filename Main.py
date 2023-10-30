@@ -63,6 +63,7 @@ def square():
 window = Tk() #Új thinkter ablak létrehozása és window változóhoz rendelése
 window.title("Számológép")
 window.geometry("310x380")
+window.resizable(False, False)
 text_box = Text(window, font=("Helvetica", 24))
 text_box.place(x=10, y=10, height=40, width=290)
 
