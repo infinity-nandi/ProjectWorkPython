@@ -3,16 +3,18 @@ from CreateButton import create_button
 import math
 
 text = ""
+
+#text változóban tárolt szöveg újraíródik a text_box-ban, amikor meghívjuk
 def update_text(x):
     global text
     text += str(x)
-    text_box.delete(1.0, "end")
-    text_box.insert(1.0, text)
+    text_box.delete(1.0, "end") #törli a text_box-ban lévő szöveget
+    text_box.insert(1.0, text) #beilleszti a frissített text tartalmat a szövegdoboz elejére
 
 def eval_numbers():
     global text
     try:
-        text = str(eval(text))
+        text = str(eval(text)) #text változó értékének kiértékelése az eval() függvény segítségével.
         text_box.delete(1.0, "end")
         text_box.insert(1.0, text)
         return text
@@ -58,7 +60,7 @@ def square():
         text_box.insert(1.0, "Error")
         return None
 
-window = Tk()
+window = Tk() #Új thinkter ablak létrehozása és window változóhoz rendelése
 window.title("Számológép")
 window.geometry("310x380")
 text_box = Text(window, font=("Helvetica", 24))
@@ -81,7 +83,8 @@ Minus = create_button(window, "-", 190, 120, 50, 50, command=lambda: update_text
 Division = create_button(window, "/", 190, 180, 50, 50, command=lambda: update_text("/"))
 Multiplication = create_button(window, "*", 190, 240, 50, 50, command=lambda: update_text("*"))
 SquareRoot = create_button(window, "√", 250, 60, 110, 50, command=square_root)
-Square = create_button(window, "²", 250, 180, 110, 50, command=square)
+Square = create_button(window, "π", 250, 180, 50, 50, command=lambda: update_text(round(math.pi, 2)))
+Pi = create_button(window, "²", 250, 240, 50, 50, command=square)
 Equal = create_button(window, "=", 190, 300, 50, 110,bg="deepskyblue",command=eval_numbers)
 C = create_button(window, "C", 130, 300, 50, 50,command=clear_text_box)
 Save = create_button(window, "Eredmény mentése", 10, 300, 50, 110, font=("Helvetica", 8), command=save_result)
