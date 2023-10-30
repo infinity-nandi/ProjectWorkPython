@@ -3,7 +3,7 @@ Beadandó
 
 Virág Nándor Gábor - XCW6CI
 
-A projekt egy számológép megvalósítása volt ami képes összeadni, kivonni, szorozni, osztani majd ezekenk az eredményét kiírni a result.txt fájlba. Továbbá kiegészítettem gyükvonással és négyzetre emelésre sajnos itt már csak a számolást végzi el és ha menteni szeretnénk az eredmény txt-be az nem jól mükődik. Tovább fejlesztési lehetőség!
+A projekt egy számológép megvalósítása volt ami képes összeadni, kivonni, szorozni, osztani majd ezekenk az eredményét kiírni a result.txt fájlba. Továbbá kiegészítettem gyökvonással és négyzetre emelésre sajnos itt már csak a számolást végzi el és ha menteni szeretnénk az eredmény txt-be az nem jól mükődik. Tovább fejlesztési lehetőség!
 
 Használt modulok:
   -thinkter
