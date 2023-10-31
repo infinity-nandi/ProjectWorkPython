@@ -42,3 +42,7 @@ Result of the calculation:
 7+7=14
 Result of the calculation:
 5+(2*3)=11
+Result of the calculation:
+7+7=14
+Result of the calculation:
+5*(2+3)/5=5.0
