@@ -1,5 +1,6 @@
 from tkinter import *
 from CreateButton import Create_Button
+from datetime import datetime
 import math
 
 class CalculatorApp:
@@ -62,8 +63,9 @@ class CalculatorApp:
     def save_result(self):
         calculation = self.text_box.get(1.0, "end-1c")  #A text_box tartalmának megszerzése
         if calculation is not None:
+            title = f"\nResult of the calculation ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')}):\n"
             with open("result.txt", "a") as file:
-                file.write("\nResult of the calculation:\n")
+                file.write(title)
                 file.write(calculation)
                 self.text_box.delete(1.0, "end")
                 self.text_box.insert(1.0, "Result saved!")
@@ -72,9 +74,10 @@ class CalculatorApp:
         global text
         try:
             root = math.sqrt(float(self.text))
-            self.text_box.delete(1.0, "end")
-            self.text_box.insert(1.0, root)
-            return str(root)
+            #self.text_box.delete(1.0, "end")
+            self.text = str(root)
+            self.text_box.insert(2.0, "=" + self.text)
+            return self.text
         except:
             self.clear_text_box()
             self.text_box.insert(1.0, "Error")
@@ -83,9 +86,10 @@ class CalculatorApp:
     def square(self):
         global text
         squared = math.pow(float(self.text), 2)
-        self.text_box.delete(1.0, "end")
-        self.text_box.insert(1.0, squared)
-        return str(squared)
+        #self.text_box.delete(1.0, "end")
+        self.text = str(squared)
+        self.text_box.insert(2.0, "=" + self.text)
+        return self.text
 
 if __name__ == "__main__":
     window = Tk()
