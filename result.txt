@@ -48,3 +48,9 @@ Result of the calculation:
 5*(2+3)/5=5.0
 Result of the calculation (2023-11-01 20:22):
 7+7=14
+Result of the calculation (2023-11-01 20:26):
+7+7=14
+Result of the calculation (2023-11-01 20:34):
+8=64.0
+Result of the calculation (2023-11-01 20:35):
+64=8.0
