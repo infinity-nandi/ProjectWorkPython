@@ -1,5 +1,6 @@
 from tkinter import *
 from CreateButton import Create_Button
+from datetime import datetime
 import math
 
 class CalculatorApp:
@@ -62,8 +63,9 @@ class CalculatorApp:
     def save_result(self):
         calculation = self.text_box.get(1.0, "end-1c")  #A text_box tartalmának megszerzése
         if calculation is not None:
+            Title = f"\nResult of the calculation ({datetime.now().strftime('%Y-%m-%d %H:%M' )}):\n"
             with open("result.txt", "a") as file:
-                file.write("\nResult of the calculation:\n")
+                file.write(Title)
                 file.write(calculation)
                 self.text_box.delete(1.0, "end")
                 self.text_box.insert(1.0, "Result saved!")
