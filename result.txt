@@ -53,4 +53,19 @@ Result of the calculation (2023-11-01 20:26):
 Result of the calculation (2023-11-01 20:34):
 8=64.0
 Result of the calculation (2023-11-01 20:35):
-64=8.0
+64=8.0Result of the calculation (2023-11-01 20:40:32):
+8=64.0
+Result of the calculation (2023-11-01 20:40:54):
+8+8=16=256.0
+Result of the calculation (2023-11-01 22:58:48):
+5+(2*3)=11
+Result of the calculation (2023-11-01 22:59:40):
+6+6+6+6=24
+Result of the calculation (2023-11-02 08:15:56):
+6+(6*3+2)=26
+Result of the calculation (2023-11-22 20:35:51):
+7+(6-3)*2=13
+A számítás eredménye (2023-11-22 20:37:13):
+7+(6+4)*2=27
+A számítás eredménye (2023-11-22 20:38:33):
+6+6-2=10
